@@ -4,26 +4,26 @@ public class ThingList {
     private Node head;
 
     private class Node {
-        Thing data;
+        Thing d;
         Node next;
 
-        Node(Thing t) {
-            data = t;
+        Node(Thing talk) {
+            d = talk;
             next = null;
         }
     }
 
     public void addThing(Thing t) {
-        Node n = new Node(t);
-        n.next = head;
-        head = n;
+        Node newnode1 = new Node(t);
+        newnode1.next = head;
+        head = newnode1;
     }
 
-    public void moveAll(Random rand) {
+    public void moveAll(Random random1) {
         Node cur = head;
         while (cur != null) {
-            cur.data.maybeTurn(rand);
-            cur.data.step();
+            cur.d.turnYes(random1);
+            cur.d.step();
             cur = cur.next;
         }
     }
@@ -31,7 +31,7 @@ public class ThingList {
     public void printAll() {
         Node cur = head;
         while (cur != null) {
-            System.out.println(cur.data.lab + " at " + cur.data.getPosition());
+            System.out.println(cur.d.x + " at " + cur.d.retrive());
             cur = cur.next;
         }
     }

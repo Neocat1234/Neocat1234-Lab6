@@ -1,20 +1,20 @@
 import java.util.Random;
 
 public class TypeC extends Thing {
-    private boolean switch1 = true; // boolean switch 
+    private boolean toggle = true; // switch between left and right
 
-    public TypeC(int row, int col, char x) {
-        super(row, col, x);
+    public TypeC(int row, int col, char lab) {
+        super(row, col, lab);
     }
 
     @Override
-    public void turnYes(Random radom1) {
-        
-        if (switch1) {
+    public void maybeTurn(Random rand) {
+        // Zig-zag: alternate left and right every step
+        if (toggle) {
             leftTurn();
         } else {
             rightTurn();
         }
-        switch1 = !(switch1);
+        toggle = !toggle;
     }
 }
