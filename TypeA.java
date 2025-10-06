@@ -7,7 +7,7 @@ public class TypeA extends Thing {
     }
 
     @Override
-    public void maybeTurn(Random random1) {
+    public void turnYes(Random random1) {
         int y = random1.nextInt(3); 
         if (y == 0) leftTurn();
         else if (y == 1) rightTurn();
